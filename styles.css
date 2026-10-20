@@ -204,3 +204,6 @@ h1,h2,h3{font-family:var(--serif);letter-spacing:.06em;line-height:1.15;margin:0
   .stream{gap:8px}
   .stream a{display:inline-flex;align-items:center;min-height:36px;padding:0 8px;font-size:.66rem;letter-spacing:.05em}
 }
+
+/* Videos: a single video spans the row, centred, instead of leaving an empty second column */
+.vid-grid > .vid:only-child{grid-column:1/-1;justify-self:center;width:100%;max-width:760px}
