@@ -136,6 +136,7 @@ h1,h2,h3{font-family:var(--serif);letter-spacing:.06em;line-height:1.15;margin:0
 .yt-card{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:18px;padding:20px;text-decoration:none;color:var(--ink);
   background:radial-gradient(ellipse at 30% 30%,rgba(169,214,229,.12),transparent 70%)}
 .yt-card img{width:120px;height:120px;border-radius:2px;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.yt-card img.yt-card-thumb{width:clamp(140px,40%,240px);height:auto;aspect-ratio:16/9;object-fit:cover;flex-shrink:0}
 .yt-cta{display:inline-block;margin-top:8px;color:var(--frost);letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
 .yt + p{margin-top:10px}
 .yt-btns{margin-top:14px}
