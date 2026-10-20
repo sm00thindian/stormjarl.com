@@ -207,3 +207,21 @@ h1,h2,h3{font-family:var(--serif);letter-spacing:.06em;line-height:1.15;margin:0
 
 /* Videos: a single video spans the row, centred, instead of leaving an empty second column */
 .vid-grid > .vid:only-child{grid-column:1/-1;justify-self:center;width:100%;max-width:760px}
+
+/* ---- Streaming icon row (v3, Oct 2026): round 44px buttons, Spotify / Apple Music / YouTube Music / Amazon Music ---- */
+ul.si-row{--si-gap:8px;display:flex;flex-wrap:wrap;align-items:center;gap:var(--si-gap);list-style:none;margin:12px 0 0;padding:0;border:0}
+ul.si-row>li{display:flex;align-items:center;margin:0;padding:0;border:0;list-style:none}
+ul.si-row>li::before,ul.si-row>li::after{content:none}
+ul.si-row .si-lead{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-right:4px;line-height:44px;white-space:nowrap}
+ul.si-row a.si{position:relative;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;margin:0;border:1px solid var(--si-line);border-radius:50%;background:transparent;color:#fff;text-decoration:none;line-height:1}
+ul.si-row .si-ico{display:block;width:22px;height:22px;fill:#fff}
+ul.si-row .si-amz{display:block;width:28px;height:28px;border-radius:50%}
+ul.si-row a.si:hover{border-color:var(--si-hovline,var(--si-acc));background:var(--si-hov)}
+ul.si-row a:focus-visible{outline:2px solid var(--si-acc);outline-offset:2px}
+ul.si-row a.si[data-tip]:hover::after,ul.si-row a.si[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#111;color:#fff;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.02em;text-transform:none;padding:6px 8px;border-radius:4px;border:1px solid var(--si-acc);white-space:nowrap;pointer-events:none;z-index:5}
+ul.si-row a.si.si-last[data-tip]::after{left:auto;right:0;transform:none}
+ul.si-row a.si-link{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;border:0;border-radius:4px;background:none;color:var(--si-text);font-size:var(--si-fs,.8rem);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+ul.si-row{--si-acc:var(--frost);--si-line:var(--line);--si-hov:rgba(169,214,229,.14);--si-text:var(--frost);--si-fs:.66rem;--si-gap:4px}
+/* narrow release cards (phones, and 5-up between 1000-1100px): 2x2 grid */
+.rel-grid .rel{container-type:inline-size}
+@container (max-width:187.98px){ul.si-row{--si-gap:8px}ul.si-row{display:grid;grid-template-columns:repeat(2,44px)}}
